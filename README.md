@@ -1,7 +1,9 @@
 # Homebrew tap for TmuxIsland
 
 ```bash
-brew install --cask kgrandemange/tap/tmuxisland
+brew tap kgrandemange/tap
+brew trust --tap kgrandemange/tap   # Homebrew asks you to trust third-party taps (once)
+brew install --cask tmuxisland
 ```
 
 [TmuxIsland](https://kgrandemange.github.io/tmux-island-site/) is a Dynamic Island for tmux on macOS: it tells you
