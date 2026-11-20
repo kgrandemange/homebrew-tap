@@ -12,7 +12,7 @@ cask "tmuxisland" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "TmuxIsland.app"
@@ -20,9 +20,10 @@ cask "tmuxisland" do
   # The app is ad-hoc signed and not notarized (notarization needs a paid Apple developer account).
   # Homebrew has already verified the SHA-256 above, so the quarantine flag is removed to avoid the
   # first-launch Gatekeeper prompt.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TmuxIsland.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:         ["-dr", "com.apple.quarantine", "/Applications/TmuxIsland.app"],
+        must_succeed: false
   end
 
   zap trash: [
