@@ -1,0 +1,32 @@
+cask "tmuxisland" do
+  version "0.1.0"
+  sha256 "2bc0d2ca1cfcec5ec9c432bc7eb3136d2a2b3126d9f80433a05a61c98a3ef695"
+
+  url "https://github.com/kgrandemange/tmux-island-site/releases/download/v#{version}/TmuxIsland.zip"
+  name "TmuxIsland"
+  desc "Dynamic Island for tmux: see which AI agent finished and jump to its pane"
+  homepage "https://kgrandemange.github.io/tmux-island-site/"
+
+  livecheck do
+    url "https://github.com/kgrandemange/tmux-island-site/releases"
+    strategy :github_latest
+  end
+
+  depends_on macos: ">= :sonoma"
+  depends_on arch: :arm64
+
+  app "TmuxIsland.app"
+
+  # The app is ad-hoc signed and not notarized (notarization needs a paid Apple developer account).
+  # Homebrew has already verified the SHA-256 above, so the quarantine flag is removed to avoid the
+  # first-launch Gatekeeper prompt.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TmuxIsland.app"]
+  end
+
+  zap trash: [
+    "~/.local/state/tmux-island",
+    "~/Library/Preferences/io.github.kgrandemange.tmux-island.plist",
+  ]
+end
