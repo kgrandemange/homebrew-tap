@@ -1,6 +1,6 @@
 cask "tmuxisland" do
-  version "1.1.0"
-  sha256 "4100ed0046c926de3a18712ff517f552a0d23bbcd6d4ff8135f8fef354603a12"
+  version "1.1.1"
+  sha256 "c73cd93e524eaba63a38f357f7ceb47f2425d3f555da7a9ca979760fa0a0e48b"
 
   url "https://github.com/kgrandemange/tmux-island/releases/download/v#{version}/TmuxIsland.zip"
   name "TmuxIsland"
