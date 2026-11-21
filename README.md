@@ -6,7 +6,7 @@ brew trust --tap kgrandemange/tap   # Homebrew asks you to trust third-party tap
 brew install --cask tmuxisland
 ```
 
-[TmuxIsland](https://kgrandemange.github.io/tmux-island-site/) is a Dynamic Island for tmux on macOS: it tells you
+[TmuxIsland](https://kgrandemange.github.io/tmux-island/) is a Dynamic Island for tmux on macOS: it tells you
 which AI agent finished and jumps to the right pane in one click. Free to use, not open source.
 
 - Apple Silicon only, macOS 14 or later.

@@ -1,14 +1,14 @@
 cask "tmuxisland" do
-  version "0.1.2"
-  sha256 "013e1bce7f5ef53598d6baad3aa32c2ea3f80b1c88d34f97d3ebe6267a6ee7d8"
+  version "1.0.0"
+  sha256 "19eb41748af2a90bae7983ae890215114625fe7fe18125d1a76774e22862d526"
 
-  url "https://github.com/kgrandemange/tmux-island-site/releases/download/v#{version}/TmuxIsland.zip"
+  url "https://github.com/kgrandemange/tmux-island/releases/download/v#{version}/TmuxIsland.zip"
   name "TmuxIsland"
   desc "Dynamic Island for tmux: see which AI agent finished and jump to its pane"
-  homepage "https://kgrandemange.github.io/tmux-island-site/"
+  homepage "https://kgrandemange.github.io/tmux-island/"
 
   livecheck do
-    url "https://github.com/kgrandemange/tmux-island-site/releases"
+    url "https://github.com/kgrandemange/tmux-island/releases"
     strategy :github_latest
   end
 
